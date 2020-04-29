@@ -10,40 +10,55 @@ In order to use the function object, you have to do the following steps:
 
 * Load your foam environment in your shell
 
-> cd $FOAM_SRC/functionObjects/field
+```bash
+cd $FOAM_SRC/functionObjects/field
+git clone https://shor-ty@bitbucket.org/shor-ty/meshquality.git meshQuality
+cd meshQuality
+```
 
-> git clone https://shor-ty@bitbucket.org/shor-ty/meshquality.git meshQuality
+* Now load the version you need. Replace `OpenFOAM-7.x` by your version (use tab to show the versions for which this library is available)
+* Until now, only version 7 of the OpenFOAM Foundation version is supported
 
-> cd meshQuality
-
-* Now you have to get the version you need. Replace `OpenFOAM-7.x` by your version (use tab to show the versions for which this library is available)
-
-> git checkout OpenFOAM-7.x
+```bash
+git checkout OpenFOAM-7.x
+```
 
 * Additionally, you have to add the source file to the Make/files file
 
-> gedit ../Make/files
+```bash
+gedit ../Make/files
+```
 
 * Now add somewhere the line
 
-> meshQuality/meshQuality.C
+```bash
+meshQuality/meshQuality.C
+```
 
 * And recompile the library using
 
-> wmake libso
+```bash
+wmake libso
+```
 
 ## Usage ##
 To use the function object, you can go to any OpenFOAM case (a mesh has to be available) and run:
 
-> postProcess -func meshQuality
+```bash
+postProcess -func meshQuality
+```
 
 If you get a message that the meshQuality dict is not found you have to create it manually. For that we first copy an existing one:
 
-> foamGet age 
+```bash
+foamGet age
+```
 
 Now open the file (`system/age`) and change the type to `meshQuality` and remove the `nCorr` entry. Finally, rename the file
 
-> mv system/age system/meshQuality
+```bash
+mv system/age system/meshQuality
+```
 
 
 ## Parameters ##
@@ -64,6 +79,6 @@ The function object writes different fields. One can adjust them by setting the 
 
 ## Contact ##
 
-* If you have any questions: Tobias.Holzmann@Holzmann-cfd.de
+* If you have any questions: Tobias.Holzmann@Holzmann-cfd.com
 
 * Website: https://Holzmann-cfd.com
