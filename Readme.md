@@ -4,6 +4,10 @@
 
 * The function object is going to be added to the OpenFOAM Foundation dev line
 
+## Branches available for##
+* OpenFOAM-v7
+* OpenFOAM-v8
+
 ## Compilation ##
 
 In order to use the function object, you have to do the following steps:
@@ -16,18 +20,17 @@ git clone https://shor-ty@bitbucket.org/shor-ty/meshquality.git meshQuality
 cd meshQuality
 ```
 
-* Now load the version you need. Replace `OpenFOAM-7.x` by your version (use tab to show the versions for which this library is available)
-* Until now, only version 7 of the OpenFOAM Foundation version is supported (master branch)
+* Now load the version you need. Replace `OpenFOAM-v7` by your version (use tab to show the versions for which this library is available)
 * If there are other versions available, you can checkout the other ones by using
 
 ```bash
 git checkout <TAB><TAB>
 ```
 
-* Additionally, you have to add the source file to the Make/files file
+* Additionally, you have to add the source file to the Make/files file of the functionObject fields
 
 ```bash
-gedit ../Make/files
+gedit $FOAM_SRC/functionObjects/field/Make/files
 ```
 
 * Now add somewhere the line (preferably at the end of the file)
@@ -80,6 +83,6 @@ The function object writes different fields. One can adjust them by setting the 
 
 ## Contact ##
 
-* If you have any questions: Tobias.Holzmann@Holzmann-cfd.com
+* If you have any questions: Community@Holzmann-cfd.com
 
 * Website: https://Holzmann-cfd.com
