@@ -16,7 +16,7 @@ In order to use the function object, you have to do the following steps:
 
 ```bash
 cd $FOAM_SRC/functionObjects/field
-git clone https://shor-ty@bitbucket.org/shor-ty/meshquality.git meshQuality
+git clone https://github.com:shor-ty/meshquality.git meshQuality
 cd meshQuality
 ```
 
